@@ -91,7 +91,7 @@ public class AutomationDriver {
 			String[] testcaseid = ReadTestData.getExecutable(FILE_NAME, i);
 			boolean freshcase = true;
 			int testcasecolumnno = -1;
-			if (testcaseid[1].equalsIgnoreCase("YES"))
+			if (testcaseid[1].equalsIgnoreCase("YES")) //Only test cases have Yes will be executed
 			{
 				Report.CreateTest(testcaseid[0]);
 				testcasecolumnno = ReadTestData.getTestCaseColumnNo(FILE_NAME,testcaseid[0]);
