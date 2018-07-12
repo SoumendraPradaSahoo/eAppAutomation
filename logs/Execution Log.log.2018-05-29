@@ -1,0 +1,98 @@
+18:41:20 [ INFO] [main] - Initializing Browser for Automation
+18:41:34 [ INFO] [main] - Browser Initialization Successfull
+18:41:35 [ INFO] [main] - Total no of case: 2
+18:41:36 [ INFO] [main] - Initialization Report
+18:41:36 [ INFO] [main] - Report Initialization Successfull
+18:41:36 [ INFO] [main] - Initializing Screenshot path
+18:41:36 [ INFO] [main] - Report Initialization Successfull
+18:41:36 [ INFO] [main] -   TC#1  Yes
+18:41:36 [ INFO] [main] - Starting Test Case TC#1
+18:41:36 [ INFO] [main] - Test Case Data
+18:41:36 [ INFO] [main] -   Agent Console  New Application  Click  
+18:41:37 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+18:41:37 [ERROR] [main] - java.lang.NullPointerException
+18:41:37 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+18:41:37 [ERROR] [main] - java.lang.NullPointerException
+18:41:37 [ INFO] [main] - Locator for New Application in page Agent Console
+18:41:37 [ INFO] [main] -   Button  xpath  //li[@class='startNew']/a    
+18:41:39 [ INFO] [main] - Test Case Data
+18:41:39 [ INFO] [main] -   New Application  Plan Type  Click  FLX 25 Year Term
+18:41:39 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+18:41:39 [ERROR] [main] - java.lang.NullPointerException
+18:41:39 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+18:41:39 [ERROR] [main] - java.lang.NullPointerException
+18:41:39 [ INFO] [main] - Locator for Plan Type in page New Application
+18:41:39 [ INFO] [main] -   Button  xpath  //td[@title='+PlanofInsurace+']    
+18:41:40 [ INFO] [main] - Test Case Data
+18:41:40 [ INFO] [main] -   New Application  Quote  Click  
+18:41:40 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+18:41:40 [ERROR] [main] - java.lang.NullPointerException
+18:41:40 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+18:41:40 [ERROR] [main] - java.lang.NullPointerException
+18:41:40 [ INFO] [main] - Locator for Quote in page New Application
+18:41:40 [ INFO] [main] -   Button  id  Quote    
+18:42:10 [ERROR] [main] - Error in clickButton in FunctionLibrary class
+18:42:10 [ERROR] [main] - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: Quote (tried for 30 second(s) with 500 MILLISECONDS interval)
+Build info: version: 'unknown', revision: 'unknown', time: 'unknown'
+System info: host: 'DXCINDAI694979', ip: '20.201.191.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_161'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.35.528161 (5b82f2d2aae0ca24b877009200ced9065a772e73), userDataDir=C:\Users\ssahoo43\AppData\Local\Temp\1\scoped_dir2756_12712}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=66.0.3359.181, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=false, acceptInsecureCerts=false, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=}]
+Session ID: bbb2587f0cbd202474aad6869ff4d5c8
+18:42:10 [ INFO] [main] - Test Case Data
+18:42:10 [ INFO] [main] -   Quote  First Name  SetValue  Soumendra
+18:42:10 [ INFO] [main] - Locator for First Name in page Quote
+18:42:10 [ INFO] [main] -   TextBox  name  a_FirstName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_FirstName_PINS_quote_lifeterm']
+18:59:40 [ INFO] [main] - Initializing Browser for Automation
+18:59:54 [ INFO] [main] - Browser Initialization Successfull
+18:59:56 [ INFO] [main] - Total no of case: 2
+18:59:56 [ INFO] [main] - Initialization Report
+18:59:56 [ INFO] [main] - Report Initialization Successfull
+18:59:56 [ INFO] [main] - Initializing Screenshot path
+18:59:56 [ INFO] [main] - Report Initialization Successfull
+18:59:56 [ INFO] [main] -   TC#1  Yes
+18:59:57 [ INFO] [main] - Starting Test Case TC#1
+18:59:57 [ INFO] [main] - Test Case Data
+18:59:57 [ INFO] [main] -   Agent Console  New Application  Click  
+18:59:57 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+18:59:57 [ERROR] [main] - java.lang.NullPointerException
+18:59:57 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+18:59:57 [ERROR] [main] - java.lang.NullPointerException
+18:59:57 [ INFO] [main] - Locator for New Application in page Agent Console
+18:59:57 [ INFO] [main] -   Button  xpath  //li[@class='startNew']/a    
+19:01:09 [ INFO] [main] - Initializing Browser for Automation
+19:01:23 [ INFO] [main] - Browser Initialization Successfull
+19:01:24 [ INFO] [main] - Total no of case: 2
+19:01:24 [ INFO] [main] - Initialization Report
+19:01:25 [ INFO] [main] - Report Initialization Successfull
+19:01:25 [ INFO] [main] - Initializing Screenshot path
+19:01:25 [ INFO] [main] - Report Initialization Successfull
+19:01:25 [ INFO] [main] -   TC#1  Yes
+19:01:25 [ INFO] [main] - Starting Test Case TC#1
+19:01:26 [ INFO] [main] - Test Case Data
+19:01:26 [ INFO] [main] -   Agent Console  New Application  Click  
+19:01:26 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+19:01:26 [ERROR] [main] - java.lang.NullPointerException
+19:01:26 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+19:01:26 [ERROR] [main] - java.lang.NullPointerException
+19:01:26 [ INFO] [main] - Locator for New Application in page Agent Console
+19:01:26 [ INFO] [main] -   Button  xpath  //li[@class='startNew']/a    
+19:01:28 [ INFO] [main] - Test Case Data
+19:01:28 [ INFO] [main] -   New Application  Plan Type  Click  FLX 25 Year Term
+19:01:28 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+19:01:28 [ERROR] [main] - java.lang.NullPointerException
+19:01:28 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+19:01:28 [ERROR] [main] - java.lang.NullPointerException
+19:01:28 [ INFO] [main] - Locator for Plan Type in page New Application
+19:01:28 [ INFO] [main] -   Button  xpath  //td[@title='+PlanofInsurace+']    
+19:01:29 [ INFO] [main] - Test Case Data
+19:01:29 [ INFO] [main] -   New Application  Quote  Click  
+19:01:29 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+19:01:29 [ERROR] [main] - java.lang.NullPointerException
+19:01:29 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+19:01:29 [ERROR] [main] - java.lang.NullPointerException
+19:01:29 [ INFO] [main] - Locator for Quote in page New Application
+19:01:29 [ INFO] [main] -   Button  id  Quote    
+19:01:34 [ INFO] [main] - Test Case Data
+19:01:34 [ INFO] [main] -   Quote  First Name  SetValue  Soumendra
+19:01:34 [ INFO] [main] - Locator for First Name in page Quote
+19:01:34 [ INFO] [main] -   TextBox  name  a_FirstName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_FirstName_PINS_quote_lifeterm']
