@@ -14,6 +14,7 @@ public class AutomationDriver {
 	private static String eApp_URL; //= "http://20.15.86.50:8080/eApps/"; //Eapp URL
 	private static String agent_ID; //= "ssahoo43"; //Agent ID
 	private static String agent_PWD; //= "vilink"; //Password
+	private static String browser_type; //Chrome or IE
 	static int ColumnNo;
 	static String[] objects;
 	
@@ -31,6 +32,7 @@ public class AutomationDriver {
 		FieldIdentifier_Loc = p.getProperty("FieldIdentifier_Filename");
 		Report_Path = p.getProperty("Report_Path");
 		Screenshot_Path = p.getProperty("Screenshot_Path");
+		browser_type = p.getProperty("Browser");
 		eApp_URL = p.getProperty("URL");
 		agent_ID = p.getProperty("agent_ID");
 		agent_PWD = p.getProperty("agent_PWD");
@@ -41,7 +43,7 @@ public class AutomationDriver {
 		//Login to Application
 		try {
 			Log.info("Initializing Browser for Automation");
-			FunctionLibrary.login(eApp_URL, agent_ID, agent_PWD, TimeOutSeconds);
+			FunctionLibrary.login(browser_type, eApp_URL, agent_ID, agent_PWD, TimeOutSeconds);
 			Log.info("Browser Initialization Successfull");
 		} catch (Exception e) {
 			Log.error("Error in calling FunctionLibrary.login in AutomationDriver class");
