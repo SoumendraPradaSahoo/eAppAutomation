@@ -43,12 +43,12 @@ public class FunctionLibrary {
 		System.out.println("Starting Automation");  
 		if (browser_type.equalsIgnoreCase("Chrome"))
 		{
-			System.setProperty("webdriver.chrome.driver", "D:/chromedriver_win32/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "D:/Drivers/chromedriver.exe");
 			driver = new ChromeDriver();
 		}
 		if (browser_type.equalsIgnoreCase("IE"))
 		{
-			System.setProperty("webdriver.ie.driver", "D:/chromedriver_win32/IEDriverServer.exe");
+			System.setProperty("webdriver.ie.driver", "D:/Drivers/IEDriverServer.exe");
 			driver = new InternetExplorerDriver();
 		}
 		driver.manage().timeouts().pageLoadTimeout(TimeOutSeconds,TimeUnit.SECONDS);

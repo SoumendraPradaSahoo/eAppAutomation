@@ -655,3 +655,349 @@
 16:33:43 [ INFO] [main] - Report Building Completed
 16:33:43 [ INFO] [main] - Reporfiming Logout
 16:33:47 [ INFO] [main] - Logout Successfull
+16:48:53 [ INFO] [main] - Initializing Browser for Automation
+16:48:54 [ERROR] [main] - Error in calling FunctionLibrary.login in AutomationDriver class
+16:48:54 [ERROR] [main] - The driver executable does not exist: D:\chromedriver_win32\chromedriver.exe
+16:51:22 [ INFO] [main] - Initializing Browser for Automation
+16:52:12 [ INFO] [main] - Browser Initialization Successfull
+16:52:18 [ INFO] [main] - Total no of case: 2
+16:52:18 [ INFO] [main] - Initialization Report
+16:52:19 [ INFO] [main] - Report Initialization Successfull
+16:52:19 [ INFO] [main] - Initializing Screenshot path
+16:52:19 [ INFO] [main] - Report Initialization Successfull
+16:52:20 [ INFO] [main] -   TC#1  Yes
+16:52:20 [ INFO] [main] - Starting Test Case TC#1
+16:52:21 [ INFO] [main] - Test Case Data
+16:52:21 [ INFO] [main] -   Agent Console  New Application  Click  
+16:52:21 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+16:52:21 [ERROR] [main] - java.lang.NullPointerException
+16:52:21 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+16:52:21 [ERROR] [main] - java.lang.NullPointerException
+16:52:21 [ INFO] [main] - Locator for New Application in page Agent Console
+16:52:21 [ INFO] [main] -   Button  xpath  //li[@class='startNew']/a    
+16:52:36 [ INFO] [main] - Test Case Data
+16:52:36 [ INFO] [main] -   New Application  Plan Type  Click  FLX 25 Year Term
+16:52:36 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+16:52:36 [ERROR] [main] - java.lang.NullPointerException
+16:52:36 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+16:52:36 [ERROR] [main] - java.lang.NullPointerException
+16:52:36 [ INFO] [main] - Locator for Plan Type in page New Application
+16:52:36 [ INFO] [main] -   Button  xpath  //td[@title='+PlanofInsurace+']    
+16:52:38 [ INFO] [main] - Test Case Data
+16:52:38 [ INFO] [main] -   New Application  Quote  Click  
+16:52:39 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+16:52:39 [ERROR] [main] - java.lang.NullPointerException
+16:52:39 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+16:52:39 [ERROR] [main] - java.lang.NullPointerException
+16:52:39 [ INFO] [main] - Locator for Quote in page New Application
+16:52:39 [ INFO] [main] -   Button  id  Quote    
+16:52:40 [ INFO] [main] - Test Case Data
+16:52:40 [ INFO] [main] -   Quote  First Name  SetValue  Soumendra
+16:52:41 [ INFO] [main] - Locator for First Name in page Quote
+16:52:41 [ INFO] [main] -   TextBox  name  a_FirstName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_FirstName_PINS_quote_lifeterm']
+16:53:14 [ERROR] [main] - Error in setValue for field type 'TextBox' and data 'Soumendra' in FunctionLibrary class
+16:53:14 [ERROR] [main] - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.name: a_FirstName_PINS (tried for 30 second(s) with 500 milliseconds interval)
+16:53:14 [ INFO] [main] - Test Case Data
+16:53:14 [ INFO] [main] -   Quote  First Name  VerifyClientMessage  SKIP
+16:53:15 [ INFO] [main] - Test Case Data
+16:53:15 [ INFO] [main] -   Quote  MI  SetValue  P
+16:53:15 [ INFO] [main] - Locator for MI in page Quote
+16:53:15 [ INFO] [main] -   TextBox  name  a_MiddleName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_MiddleName_PINS_quote_lifeterm']
+16:53:29 [ INFO] [main] - Test Case Data
+16:53:29 [ INFO] [main] -   Quote  Last Name  SetValue  
+16:53:29 [ INFO] [main] - Locator for Last Name in page Quote
+16:53:29 [ INFO] [main] -   TextBox  name  a_LastName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_LastName_PINS_quote_lifeterm']
+16:53:29 [ INFO] [main] - Test Case Data
+16:53:29 [ INFO] [main] -   Quote  Last Name  VerifyClientMessage  Proposed Insured's Last Name is missing.
+16:53:29 [ INFO] [main] - Locator for Last Name in page Quote
+16:53:29 [ INFO] [main] -   TextBox  name  a_LastName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_LastName_PINS_quote_lifeterm']
+16:53:30 [ INFO] [main] - Test Case Data
+16:53:30 [ INFO] [main] -   Quote  Suffix  SetValue  IV
+16:53:30 [ INFO] [main] - Locator for Suffix in page Quote
+16:53:30 [ INFO] [main] -   DDLB  name  a_Suffix_PINS  xpath  //div[@class='validationMsg']/label[@for='a_Suffix_PINS_quote_lifeterm']
+16:53:31 [ INFO] [main] - Test Case Data
+16:53:31 [ INFO] [main] -   Quote  Application Jurisdiction  SetValue  AZ
+16:53:31 [ INFO] [main] - Locator for Application Jurisdiction in page Quote
+16:53:31 [ INFO] [main] -   DDLB  name  a_ApplicationJurisdiction  xpath  //div[@class='validationMsg']/label[@for='a_ApplicationJurisdiction_quote_lifeterm']
+16:53:32 [ INFO] [main] - Test Case Data
+16:53:32 [ INFO] [main] -   Quote  Save Age  SetValue  No
+16:53:33 [ INFO] [main] - Locator for Save Age in page Quote
+16:53:33 [ INFO] [main] -   RadioOption  name  a_SaveAgeInd  xpath  //div[@class='validationMsg']/label[@for='a_SaveAgeInd_quote_lifeterm']
+16:53:33 [ INFO] [main] - Test Case Data
+16:53:33 [ INFO] [main] -   Quote  Requested Policy Effective Date  SetValue  SKIP
+16:53:33 [ INFO] [main] - Test Case Data
+16:53:33 [ INFO] [main] -   Quote  DOB  SetValue  15/08/1988
+16:53:33 [ INFO] [main] - Locator for DOB in page Quote
+16:53:33 [ INFO] [main] -   TextBox  name  a_DOB_PINS  xpath  //div[@class='validationMsg']/label[@for='a_DOB_PINS_quote_lifeterm']
+16:53:36 [ INFO] [main] - Test Case Data
+16:53:36 [ INFO] [main] -   Quote  Age  GetValue  30
+16:53:36 [ INFO] [main] - Locator for Age in page Quote
+16:53:36 [ INFO] [main] -   TextBox  name  a_Age_PINS  xpath  //div[@class='validationMsg']/label[@for='a_Age_PINS_quote_lifeterm']
+16:53:36 [ INFO] [main] - Writing test data '30' into cell (15,3)
+16:53:36 [ INFO] [main] - Test Case Data
+16:53:36 [ INFO] [main] -   Quote  Gender  SetValue  Male
+16:53:37 [ INFO] [main] - Locator for Gender in page Quote
+16:53:37 [ INFO] [main] -   DDLB  name  a_Gender_PINS  xpath  //div[@class='validationMsg']/label[@for='a_Gender_PINS_quote_lifeterm']
+16:53:38 [ INFO] [main] - Test Case Data
+16:53:38 [ INFO] [main] -   Quote  Tobacco User  SetValue  Yes
+16:53:38 [ INFO] [main] - Locator for Tobacco User in page Quote
+16:53:38 [ INFO] [main] -   RadioOption  name  a_TobaccoPremiumBasis_PINS  xpath  //div[@class='validationMsg']/label[@for='a_TobaccoPremiumBasis_PINS_quote_lifeterm']
+16:53:40 [ INFO] [main] - Test Case Data
+16:53:40 [ INFO] [main] -   Quote  Coverage Amount  SetValue  350000
+16:53:40 [ INFO] [main] - Locator for Coverage Amount in page Quote
+16:53:40 [ INFO] [main] -   TextBox  name  a_CurrentAmt  xpath  //div[@class='validationMsg']/label[@for='a_CurrentAmt_quote_lifeterm']
+16:53:44 [ INFO] [main] - Test Case Data
+16:53:44 [ INFO] [main] -   Quote  Risk Classification Applied For  SetValue  Preferred Tobacco
+16:53:45 [ INFO] [main] - Locator for Risk Classification Applied For in page Quote
+16:53:45 [ INFO] [main] -   DDLB  name  a_RateClassAppliedFor_PINS  xpath  //div[@class='validationMsg']/label[@for='a_RateClassAppliedFor_PINS_quote_lifeterm']
+16:53:47 [ INFO] [main] - Test Case Data
+16:53:47 [ INFO] [main] -   Quote  Billing Frequency  SetValue  Semi-Annual
+16:53:47 [ INFO] [main] - Locator for Billing Frequency in page Quote
+16:53:47 [ INFO] [main] -   DDLB  name  a_PaymentMode  xpath  //div[@class='validationMsg']/label[@for='a_PaymentMode_quote_lifeterm']
+16:53:49 [ INFO] [main] - Test Case Data
+16:53:49 [ INFO] [main] -   Quote  ADB Rider  SetValue  Yes
+16:53:49 [ INFO] [main] - Locator for ADB Rider in page Quote
+16:53:49 [ INFO] [main] -   Checkbox  name  a_ADBRider  xpath  //div[@class='validationMsg']/label[@for='a_ADBRider_quote_lifeterm']
+16:53:50 [ INFO] [main] - Test Case Data
+16:53:50 [ INFO] [main] -   Quote  ADB Amount  SetValue  60000
+16:53:50 [ INFO] [main] - Locator for ADB Amount in page Quote
+16:53:50 [ INFO] [main] -   TextBox  name  a_ADBRiderAmt  xpath  //div[@class='validationMsg']/label[@for='a_ADBRiderAmt_quote_lifeterm']
+16:53:54 [ INFO] [main] - Test Case Data
+16:53:54 [ INFO] [main] -   Quote  WOP Rider  SetValue  Yes
+16:53:54 [ INFO] [main] - Locator for WOP Rider in page Quote
+16:53:54 [ INFO] [main] -   Checkbox  name  a_WOPRider  xpath  //div[@class='validationMsg']/label[@for='a_WOPRider_quote_lifeterm']
+16:53:57 [ INFO] [main] - Test Case Data
+16:53:57 [ INFO] [main] -   Quote  Child Rider  SetValue  Yes
+16:53:57 [ INFO] [main] - Locator for Child Rider in page Quote
+16:53:57 [ INFO] [main] -   Checkbox  name  a_CTRider  xpath  //div[@class='validationMsg']/label[@for='a_CTRider_quote_lifeterm']
+16:53:59 [ INFO] [main] - Test Case Data
+16:53:59 [ INFO] [main] -   Quote  Same Payor Discount  SetValue  No
+16:54:00 [ INFO] [main] - Locator for Same Payor Discount in page Quote
+16:54:00 [ INFO] [main] -   Checkbox  name  a_SamePyrDiscountInd  xpath  //div[@class='validationMsg']/label[@for='a_SamePyrDiscountInd_quote_lifeterm']
+16:54:00 [ INFO] [main] - Test Case Data
+16:54:00 [ INFO] [main] -   Quote  Employee Discount  SetValue  Yes
+16:54:00 [ INFO] [main] - Locator for Employee Discount in page Quote
+16:54:00 [ INFO] [main] -   Checkbox  name  a_EmployeeDiscountInd  xpath  //div[@class='validationMsg']/label[@for='a_EmployeeDiscountInd_quote_lifeterm']
+16:54:03 [ INFO] [main] - Test Case Data
+16:54:03 [ INFO] [main] -   Quote  Association Discount  SetValue  No
+16:54:03 [ INFO] [main] - Locator for Association Discount in page Quote
+16:54:03 [ INFO] [main] -   Checkbox  name  a_AstDiscountInd  xpath  //div[@class='validationMsg']/label[@for='a_AstDiscountInd_quote_lifeterm']
+16:54:03 [ INFO] [main] - Test Case Data
+16:54:03 [ INFO] [main] -   Quote  Quote  Click  
+16:54:03 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+16:54:03 [ERROR] [main] - java.lang.NullPointerException
+16:54:03 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+16:54:03 [ERROR] [main] - java.lang.NullPointerException
+16:54:03 [ INFO] [main] - Locator for Quote in page Quote
+16:54:03 [ INFO] [main] -   Button  xpath  //input[@id='quoteButton']    
+16:54:08 [ INFO] [main] - Test Case Data
+16:54:08 [ INFO] [main] -   Quote  Risk Classification Applied For  GetValue  Preferred Tobacco
+16:54:08 [ INFO] [main] - Locator for Risk Classification Applied For in page Quote
+16:54:08 [ INFO] [main] -   DDLB  name  a_RateClassAppliedFor_PINS  xpath  //div[@class='validationMsg']/label[@for='a_RateClassAppliedFor_PINS_quote_lifeterm']
+16:54:09 [ INFO] [main] - Writing test data 'Preferred Tobacco' into cell (29,3)
+16:54:09 [ INFO] [main] - Test Case Data
+16:54:09 [ INFO] [main] -   Quote  ADB Rider  GetValue  Yes
+16:54:09 [ INFO] [main] - Locator for ADB Rider in page Quote
+16:54:09 [ INFO] [main] -   Checkbox  name  a_ADBRider  xpath  //div[@class='validationMsg']/label[@for='a_ADBRider_quote_lifeterm']
+16:54:09 [ INFO] [main] - Writing test data 'Yes' into cell (30,3)
+16:54:10 [ INFO] [main] - Test Case Data
+16:54:10 [ INFO] [main] -   Quote  ADB Amount  GetValue  $60,000
+16:54:10 [ INFO] [main] - Locator for ADB Amount in page Quote
+16:54:10 [ INFO] [main] -   TextBox  name  a_ADBRiderAmt  xpath  //div[@class='validationMsg']/label[@for='a_ADBRiderAmt_quote_lifeterm']
+16:54:10 [ INFO] [main] - Writing test data '$60,000' into cell (31,3)
+16:54:10 [ INFO] [main] - Test Case Data
+16:54:10 [ INFO] [main] -   Quote  DOB  GetValue  1988-12-08
+16:54:10 [ INFO] [main] - Locator for DOB in page Quote
+16:54:10 [ INFO] [main] -   TextBox  name  a_DOB_PINS  xpath  //div[@class='validationMsg']/label[@for='a_DOB_PINS_quote_lifeterm']
+16:54:10 [ INFO] [main] - Writing test data '1988-12-08' into cell (32,3)
+16:54:10 [ INFO] [main] - Test Case Data
+16:54:10 [ INFO] [main] -   Quote  Tobacco User  GetValue  Yes
+16:54:10 [ INFO] [main] - Locator for Tobacco User in page Quote
+16:54:10 [ INFO] [main] -   RadioOption  name  a_TobaccoPremiumBasis_PINS  xpath  //div[@class='validationMsg']/label[@for='a_TobaccoPremiumBasis_PINS_quote_lifeterm']
+16:54:11 [ INFO] [main] - Writing test data 'Yes' into cell (33,3)
+16:54:11 [ INFO] [main] - Test Case Data
+16:54:11 [ INFO] [main] -   Quote  Save Age  GetValue  No
+16:54:11 [ INFO] [main] - Locator for Save Age in page Quote
+16:54:11 [ INFO] [main] -   RadioOption  name  a_SaveAgeInd  xpath  //div[@class='validationMsg']/label[@for='a_SaveAgeInd_quote_lifeterm']
+16:54:11 [ INFO] [main] - Writing test data 'No' into cell (34,3)
+16:54:11 [ INFO] [main] - Test Case Data
+16:54:11 [ INFO] [main] -   Quote  Same Payor Discount  GetValue  No
+16:54:11 [ INFO] [main] - Locator for Same Payor Discount in page Quote
+16:54:11 [ INFO] [main] -   Checkbox  name  a_SamePyrDiscountInd  xpath  //div[@class='validationMsg']/label[@for='a_SamePyrDiscountInd_quote_lifeterm']
+16:54:11 [ INFO] [main] - Writing test data 'No' into cell (35,3)
+16:54:11 [ INFO] [main] - Execution Completed for Test Case TC#1
+16:54:11 [ INFO] [main] -   TC#2  Yes
+16:54:11 [ INFO] [main] - Starting Test Case TC#2
+16:54:12 [ INFO] [main] - Test Case Data
+16:54:12 [ INFO] [main] -   Agent Console  New Application  Click  
+16:54:12 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+16:54:12 [ERROR] [main] - java.lang.NullPointerException
+16:54:12 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+16:54:12 [ERROR] [main] - java.lang.NullPointerException
+16:54:12 [ INFO] [main] - Locator for New Application in page Agent Console
+16:54:12 [ INFO] [main] -   Button  xpath  //li[@class='startNew']/a    
+16:54:15 [ INFO] [main] - Test Case Data
+16:54:15 [ INFO] [main] -   New Application  Plan Type  Click  FLX 10 Year Term
+16:54:15 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+16:54:15 [ERROR] [main] - java.lang.NullPointerException
+16:54:15 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+16:54:15 [ERROR] [main] - java.lang.NullPointerException
+16:54:15 [ INFO] [main] - Locator for Plan Type in page New Application
+16:54:15 [ INFO] [main] -   Button  xpath  //td[@title='+PlanofInsurace+']    
+16:54:16 [ INFO] [main] - Test Case Data
+16:54:16 [ INFO] [main] -   New Application  Quote  Click  
+16:54:16 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+16:54:16 [ERROR] [main] - java.lang.NullPointerException
+16:54:16 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+16:54:16 [ERROR] [main] - java.lang.NullPointerException
+16:54:16 [ INFO] [main] - Locator for Quote in page New Application
+16:54:16 [ INFO] [main] -   Button  id  Quote    
+16:54:18 [ INFO] [main] - Test Case Data
+16:54:18 [ INFO] [main] -   Quote  First Name  SetValue  John
+16:54:18 [ INFO] [main] - Locator for First Name in page Quote
+16:54:18 [ INFO] [main] -   TextBox  name  a_FirstName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_FirstName_PINS_quote_lifeterm']
+16:54:22 [ INFO] [main] - Test Case Data
+16:54:22 [ INFO] [main] -   Quote  First Name  VerifyClientMessage  
+16:54:23 [ INFO] [main] - Locator for First Name in page Quote
+16:54:23 [ INFO] [main] -   TextBox  name  a_FirstName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_FirstName_PINS_quote_lifeterm']
+16:54:28 [ INFO] [main] - Test Case Data
+16:54:28 [ INFO] [main] -   Quote  MI  SetValue  
+16:54:28 [ INFO] [main] - Locator for MI in page Quote
+16:54:28 [ INFO] [main] -   TextBox  name  a_MiddleName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_MiddleName_PINS_quote_lifeterm']
+16:54:29 [ INFO] [main] - Test Case Data
+16:54:29 [ INFO] [main] -   Quote  Last Name  SetValue  Doe
+16:54:29 [ INFO] [main] - Locator for Last Name in page Quote
+16:54:29 [ INFO] [main] -   TextBox  name  a_LastName_PINS  xpath  //div[@class='validationMsg']/label[@for='a_LastName_PINS_quote_lifeterm']
+16:54:29 [ INFO] [main] - Test Case Data
+16:54:29 [ INFO] [main] -   Quote  Last Name  VerifyClientMessage  SKIP
+16:54:29 [ INFO] [main] - Test Case Data
+16:54:29 [ INFO] [main] -   Quote  Suffix  SetValue  
+16:54:30 [ INFO] [main] - Locator for Suffix in page Quote
+16:54:30 [ INFO] [main] -   DDLB  name  a_Suffix_PINS  xpath  //div[@class='validationMsg']/label[@for='a_Suffix_PINS_quote_lifeterm']
+16:54:30 [ INFO] [main] - Test Case Data
+16:54:30 [ INFO] [main] -   Quote  Application Jurisdiction  SetValue  DE
+16:54:30 [ INFO] [main] - Locator for Application Jurisdiction in page Quote
+16:54:30 [ INFO] [main] -   DDLB  name  a_ApplicationJurisdiction  xpath  //div[@class='validationMsg']/label[@for='a_ApplicationJurisdiction_quote_lifeterm']
+16:54:30 [ INFO] [main] - Test Case Data
+16:54:30 [ INFO] [main] -   Quote  Save Age  SetValue  Yes
+16:54:31 [ INFO] [main] - Locator for Save Age in page Quote
+16:54:31 [ INFO] [main] -   RadioOption  name  a_SaveAgeInd  xpath  //div[@class='validationMsg']/label[@for='a_SaveAgeInd_quote_lifeterm']
+16:54:31 [ INFO] [main] - Test Case Data
+16:54:31 [ INFO] [main] -   Quote  Requested Policy Effective Date  SetValue  02/05/2018
+16:54:31 [ INFO] [main] - Locator for Requested Policy Effective Date in page Quote
+16:54:31 [ INFO] [main] -   TextBox  name  a_RequestedIssueDate  xpath  //div[@class='validationMsg']/label[@for='_quote_lifeterm']
+16:54:33 [ INFO] [main] - Test Case Data
+16:54:33 [ INFO] [main] -   Quote  DOB  SetValue  01/01/1995
+16:54:33 [ INFO] [main] - Locator for DOB in page Quote
+16:54:33 [ INFO] [main] -   TextBox  name  a_DOB_PINS  xpath  //div[@class='validationMsg']/label[@for='a_DOB_PINS_quote_lifeterm']
+16:54:34 [ INFO] [main] - Test Case Data
+16:54:34 [ INFO] [main] -   Quote  Age  GetValue  23
+16:54:34 [ INFO] [main] - Locator for Age in page Quote
+16:54:34 [ INFO] [main] -   TextBox  name  a_Age_PINS  xpath  //div[@class='validationMsg']/label[@for='a_Age_PINS_quote_lifeterm']
+16:54:34 [ INFO] [main] - Writing test data '' into cell (15,4)
+16:54:34 [ INFO] [main] - Test Case Data
+16:54:34 [ INFO] [main] -   Quote  Gender  SetValue  Female
+16:54:34 [ INFO] [main] - Locator for Gender in page Quote
+16:54:34 [ INFO] [main] -   DDLB  name  a_Gender_PINS  xpath  //div[@class='validationMsg']/label[@for='a_Gender_PINS_quote_lifeterm']
+16:54:35 [ INFO] [main] - Test Case Data
+16:54:35 [ INFO] [main] -   Quote  Tobacco User  SetValue  No
+16:54:35 [ INFO] [main] - Locator for Tobacco User in page Quote
+16:54:35 [ INFO] [main] -   RadioOption  name  a_TobaccoPremiumBasis_PINS  xpath  //div[@class='validationMsg']/label[@for='a_TobaccoPremiumBasis_PINS_quote_lifeterm']
+16:54:37 [ INFO] [main] - Test Case Data
+16:54:37 [ INFO] [main] -   Quote  Coverage Amount  SetValue  300000
+16:54:37 [ INFO] [main] - Locator for Coverage Amount in page Quote
+16:54:37 [ INFO] [main] -   TextBox  name  a_CurrentAmt  xpath  //div[@class='validationMsg']/label[@for='a_CurrentAmt_quote_lifeterm']
+16:54:41 [ INFO] [main] - Test Case Data
+16:54:41 [ INFO] [main] -   Quote  Risk Classification Applied For  SetValue  Preferred Non Tobacco
+16:54:41 [ INFO] [main] - Locator for Risk Classification Applied For in page Quote
+16:54:41 [ INFO] [main] -   DDLB  name  a_RateClassAppliedFor_PINS  xpath  //div[@class='validationMsg']/label[@for='a_RateClassAppliedFor_PINS_quote_lifeterm']
+16:54:51 [ERROR] [main] - Error in setValue for field type 'DDLB' and data 'Preferred Non Tobacco' in FunctionLibrary class
+16:54:51 [ERROR] [main] - org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Preferred Non Tobacco
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:32:19.891Z'
+System info: host: 'DXCINDAI694979', ip: '192.168.0.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
+Driver info: driver.version: AutomationDriver
+16:54:51 [ INFO] [main] - Test Case Data
+16:54:51 [ INFO] [main] -   Quote  Billing Frequency  SetValue  Quarterly
+16:54:51 [ INFO] [main] - Locator for Billing Frequency in page Quote
+16:54:51 [ INFO] [main] -   DDLB  name  a_PaymentMode  xpath  //div[@class='validationMsg']/label[@for='a_PaymentMode_quote_lifeterm']
+16:54:53 [ INFO] [main] - Test Case Data
+16:54:53 [ INFO] [main] -   Quote  ADB Rider  SetValue  No
+16:54:53 [ INFO] [main] - Locator for ADB Rider in page Quote
+16:54:53 [ INFO] [main] -   Checkbox  name  a_ADBRider  xpath  //div[@class='validationMsg']/label[@for='a_ADBRider_quote_lifeterm']
+16:54:53 [ INFO] [main] - Test Case Data
+16:54:53 [ INFO] [main] -   Quote  ADB Amount  SetValue  SKIP
+16:54:53 [ INFO] [main] - Test Case Data
+16:54:53 [ INFO] [main] -   Quote  WOP Rider  SetValue  Yes
+16:54:53 [ INFO] [main] - Locator for WOP Rider in page Quote
+16:54:53 [ INFO] [main] -   Checkbox  name  a_WOPRider  xpath  //div[@class='validationMsg']/label[@for='a_WOPRider_quote_lifeterm']
+16:54:55 [ INFO] [main] - Test Case Data
+16:54:55 [ INFO] [main] -   Quote  Child Rider  SetValue  No
+16:54:55 [ INFO] [main] - Locator for Child Rider in page Quote
+16:54:55 [ INFO] [main] -   Checkbox  name  a_CTRider  xpath  //div[@class='validationMsg']/label[@for='a_CTRider_quote_lifeterm']
+16:54:56 [ INFO] [main] - Test Case Data
+16:54:56 [ INFO] [main] -   Quote  Same Payor Discount  SetValue  
+16:54:56 [ INFO] [main] - Locator for Same Payor Discount in page Quote
+16:54:56 [ INFO] [main] -   Checkbox  name  a_SamePyrDiscountInd  xpath  //div[@class='validationMsg']/label[@for='a_SamePyrDiscountInd_quote_lifeterm']
+16:54:56 [ INFO] [main] - Test Case Data
+16:54:56 [ INFO] [main] -   Quote  Employee Discount  SetValue  
+16:54:56 [ INFO] [main] - Locator for Employee Discount in page Quote
+16:54:56 [ INFO] [main] -   Checkbox  name  a_EmployeeDiscountInd  xpath  //div[@class='validationMsg']/label[@for='a_EmployeeDiscountInd_quote_lifeterm']
+16:54:56 [ INFO] [main] - Test Case Data
+16:54:56 [ INFO] [main] -   Quote  Association Discount  SetValue  
+16:54:56 [ INFO] [main] - Locator for Association Discount in page Quote
+16:54:56 [ INFO] [main] -   Checkbox  name  a_AstDiscountInd  xpath  //div[@class='validationMsg']/label[@for='a_AstDiscountInd_quote_lifeterm']
+16:54:56 [ INFO] [main] - Test Case Data
+16:54:56 [ INFO] [main] -   Quote  Quote  Click  
+16:54:56 [ERROR] [main] - Error in getting Client_Side_Message_Identifier in getLocators in ReadPageManager Class
+16:54:56 [ERROR] [main] - java.lang.NullPointerException
+16:54:56 [ERROR] [main] - Error in getting Client_Side_Message_Locator in getLocators in ReadPageManager Class
+16:54:56 [ERROR] [main] - java.lang.NullPointerException
+16:54:56 [ INFO] [main] - Locator for Quote in page Quote
+16:54:56 [ INFO] [main] -   Button  xpath  //input[@id='quoteButton']    
+16:55:26 [ERROR] [main] - Error in clickButton in FunctionLibrary class
+16:55:26 [ERROR] [main] - org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[@id='quoteButton'] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.13.0', revision: '2f0d292', time: '2018-06-25T15:32:19.891Z'
+System info: host: 'DXCINDAI694979', ip: '192.168.0.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\ssahoo43\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:54835}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}
+Session ID: b59af54c73a5be63ff9eefc7f99f3a5d
+16:55:26 [ INFO] [main] - Test Case Data
+16:55:26 [ INFO] [main] -   Quote  Risk Classification Applied For  GetValue  Preferred Non Tobacco
+16:55:26 [ INFO] [main] - Locator for Risk Classification Applied For in page Quote
+16:55:26 [ INFO] [main] -   DDLB  name  a_RateClassAppliedFor_PINS  xpath  //div[@class='validationMsg']/label[@for='a_RateClassAppliedFor_PINS_quote_lifeterm']
+16:55:27 [ INFO] [main] - Writing test data 'Standard Non Tobacco' into cell (29,4)
+16:55:27 [ INFO] [main] - Test Case Data
+16:55:27 [ INFO] [main] -   Quote  ADB Rider  GetValue  No
+16:55:27 [ INFO] [main] - Locator for ADB Rider in page Quote
+16:55:27 [ INFO] [main] -   Checkbox  name  a_ADBRider  xpath  //div[@class='validationMsg']/label[@for='a_ADBRider_quote_lifeterm']
+16:55:27 [ INFO] [main] - Writing test data 'No' into cell (30,4)
+16:55:28 [ INFO] [main] - Test Case Data
+16:55:28 [ INFO] [main] -   Quote  ADB Amount  GetValue  
+16:55:28 [ INFO] [main] - Locator for ADB Amount in page Quote
+16:55:28 [ INFO] [main] -   TextBox  name  a_ADBRiderAmt  xpath  //div[@class='validationMsg']/label[@for='a_ADBRiderAmt_quote_lifeterm']
+16:55:28 [ INFO] [main] - Writing test data '' into cell (31,4)
+16:55:28 [ INFO] [main] - Test Case Data
+16:55:28 [ INFO] [main] -   Quote  DOB  GetValue  1995-01-01
+16:55:28 [ INFO] [main] - Locator for DOB in page Quote
+16:55:28 [ INFO] [main] -   TextBox  name  a_DOB_PINS  xpath  //div[@class='validationMsg']/label[@for='a_DOB_PINS_quote_lifeterm']
+16:55:28 [ INFO] [main] - Writing test data '1995-01-01' into cell (32,4)
+16:55:28 [ INFO] [main] - Test Case Data
+16:55:28 [ INFO] [main] -   Quote  Tobacco User  GetValue  No
+16:55:28 [ INFO] [main] - Locator for Tobacco User in page Quote
+16:55:28 [ INFO] [main] -   RadioOption  name  a_TobaccoPremiumBasis_PINS  xpath  //div[@class='validationMsg']/label[@for='a_TobaccoPremiumBasis_PINS_quote_lifeterm']
+16:55:29 [ INFO] [main] - Writing test data 'No' into cell (33,4)
+16:55:29 [ INFO] [main] - Test Case Data
+16:55:29 [ INFO] [main] -   Quote  Save Age  GetValue  Yes
+16:55:29 [ INFO] [main] - Locator for Save Age in page Quote
+16:55:29 [ INFO] [main] -   RadioOption  name  a_SaveAgeInd  xpath  //div[@class='validationMsg']/label[@for='a_SaveAgeInd_quote_lifeterm']
+16:55:29 [ INFO] [main] - Writing test data 'Yes' into cell (34,4)
+16:55:29 [ INFO] [main] - Test Case Data
+16:55:29 [ INFO] [main] -   Quote  Same Payor Discount  GetValue  No
+16:55:29 [ INFO] [main] - Locator for Same Payor Discount in page Quote
+16:55:29 [ INFO] [main] -   Checkbox  name  a_SamePyrDiscountInd  xpath  //div[@class='validationMsg']/label[@for='a_SamePyrDiscountInd_quote_lifeterm']
+16:55:30 [ INFO] [main] - Writing test data 'No' into cell (35,4)
+16:55:30 [ INFO] [main] - Execution Completed for Test Case TC#2
+16:55:31 [ INFO] [main] - Report Building Completed
+16:55:31 [ INFO] [main] - Reporfiming Logout
+16:55:34 [ INFO] [main] - Logout Successfull
