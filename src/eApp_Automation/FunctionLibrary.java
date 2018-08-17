@@ -35,6 +35,8 @@ public class FunctionLibrary {
 	static String ScreenShotPath;
 	static String TestCaseID;
 	static int TestStepNo;
+	static String ScreenName;
+	static String FieldName;
 	//static WebElement wbElement;
 	//Login Function
 	public static void login(String browser_type, String url, String uname, String pwd, int timeout)
@@ -120,20 +122,20 @@ public class FunctionLibrary {
 		driver.switchTo().window(currHandle[1]);
 	}
 
-	public static void executeStep(String[] testData, int[] rowid, String identifier_fileName, boolean freshCase) 
+	public static void executeStep(String[] testData, int[] rowid, String identifier_fileName, boolean freshCase) throws IOException 
 	{
 		//Cleaning additional window for fresh case
 		if (freshCase)
 			freshCase();
 
-		String screenName = testData[0];
-		String fieldName = testData[1];
+		ScreenName=testData[0];
+		FieldName=testData[1];
 		String step = testData[2];
 		String data = testData[3];
 		variableLocator = data;
 
 		try {
-			identifiers = ReadPageManager.getLocators(identifier_fileName, screenName, fieldName);
+			identifiers = ReadPageManager.getLocators(identifier_fileName, ScreenName, FieldName);
 		}catch (Exception e)
 		{
 			Log.error("Error in getting identifier in executeStep in FunctionLibrary class");
@@ -177,7 +179,7 @@ public class FunctionLibrary {
 
 	}
 
-	public static void setValue(String fieldtype, String data)
+	public static void setValue(String fieldtype, String data) throws IOException
 	{
 		try {
 			WebElement wbElement;
@@ -225,11 +227,12 @@ public class FunctionLibrary {
 			Log.error("Error in setValue for field type '" + fieldtype + "' and data '"+ data + "' in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
+			Report.PutFail("Error in putting " + data + " in " + ScreenName + "-" + FieldName );
 		}
 
 	}
 
-	public static void getValue(String fieldtype, int[] rowid)
+	public static void getValue(String fieldtype, int[] rowid) throws IOException
 	{
 		try {
 			WebElement wbElement;
@@ -270,10 +273,11 @@ public class FunctionLibrary {
 			Log.error("Error in getValue for field type '" + fieldtype + "' and row id (" +rowid[0] + "," + rowid[1] + ") in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
+			Report.PutFail("Error in reading from field " + ScreenName + "-" + FieldName);
 		}
 	}
 
-	public static void clickButton()
+	public static void clickButton() throws IOException
 	{
 		try{
 			WebElement wbElement;
@@ -292,6 +296,7 @@ public class FunctionLibrary {
 			Log.error("Error in clickButton in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
+			Report.PutFail("Error in button click for field " + ScreenName + "-" + FieldName);
 		}
 	}
 
@@ -379,7 +384,7 @@ public class FunctionLibrary {
 	}
 
 	//Method to set the Radio Options
-	public static void setRadioOptions(List<WebElement> radio_element, String dataValue)
+	public static void setRadioOptions(List<WebElement> radio_element, String dataValue) throws IOException
 	{
 		WebElement temp;
 		if (dataValue != "") {
@@ -402,6 +407,7 @@ public class FunctionLibrary {
 				Log.error("Error in setRadioOptions in FunctionLibrary class");
 				e.printStackTrace();
 				Log.error(e.toString());
+				Report.PutFail("Not able to select the radio option as " + dataValue);
 			}}
 	}
 
