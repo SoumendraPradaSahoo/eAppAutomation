@@ -136,6 +136,11 @@ public class FunctionLibrary {
 
 		try {
 			identifiers = ReadPageManager.getLocators(identifier_fileName, ScreenName, FieldName);
+			/*identifiers[0] = Field_Type;
+			identifiers[1] = Identifier;
+			identifiers[2] = Locator;
+			identifiers[3] = Client_Side_Message_Identifier;
+			identifiers[4] = Client_Side_Message_Locator;*/
 		}catch (Exception e)
 		{
 			Log.error("Error in getting identifier in executeStep in FunctionLibrary class");
@@ -173,6 +178,15 @@ public class FunctionLibrary {
 				e.printStackTrace();
 			}
 			break;
+		case "VERIFYVALUE":
+			verifyValue(identifiers[0], data);
+			break;
+		case "VERIFYENABLED":
+			verifyEnabled(data);
+			break;
+		case "VERIFYVISIBLE":
+		verifyVisible(data);
+		break;
 		default:
 			break;
 		}
@@ -259,6 +273,10 @@ public class FunctionLibrary {
 				else
 					tempdata = "No";
 				break;
+			case "LABEL":
+				wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
+				tempdata=wbElement.getText();
+				break;
 			default:
 				break;
 			}
@@ -273,7 +291,8 @@ public class FunctionLibrary {
 			Log.error("Error in getValue for field type '" + fieldtype + "' and row id (" +rowid[0] + "," + rowid[1] + ") in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
-			Report.PutFail("Error in reading from field " + ScreenName + "-" + FieldName);
+			Report.PutFail("Error in reading from field '" + FieldName + "' from screen '" + ScreenName + 
+					"', Check row id (" +rowid[0] + "," + rowid[1] + ")");
 		}
 	}
 
@@ -339,6 +358,142 @@ public class FunctionLibrary {
 				Report.PutFail(report_text);
 				e.printStackTrace();
 			}
+		}
+	}
+
+	public static void verifyValue(String fieldtype, String value) throws IOException
+	{
+		String report_text;
+		report_text = "Verification of field value, Expected: " + value + " , Actual: " ;
+		try {
+			WebElement wbElement;
+			Select temp_ddlb;
+			List<WebElement> wbElementList;
+			String tempdata = "";
+			switch (fieldtype.toUpperCase()) {
+			case "TEXTBOX":
+				wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
+				tempdata = wbElement.getAttribute("value");
+				break;
+			case "DDLB":
+				temp_ddlb= new Select(new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by)));	
+				tempdata = temp_ddlb.getFirstSelectedOption().getText();
+				break;
+			case "RADIOOPTION":
+				wbElementList= new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfAllElements(driver.findElements(by)));
+				tempdata = getRadioOptions(wbElementList);
+				break;
+			case "CHECKBOX":
+				wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.elementToBeClickable(by));
+				if (wbElement.isSelected())
+					tempdata = "Yes";
+				else
+					tempdata = "No";
+				break;
+			case "LABEL":
+				wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
+				tempdata=wbElement.getText();
+				break;
+			default:
+				break;
+			}
+			report_text=report_text+tempdata;
+
+			if (tempdata.equalsIgnoreCase(value)){
+				Report.PutPass(report_text);}
+			else {
+				Report.PutFail(report_text);
+			}
+		}		
+
+		catch (Exception e)
+		{
+			Log.error("Error in verifyValue in FunctionLibrary class");
+			e.printStackTrace();
+			Log.error(e.toString());
+			Report.PutFail("Error in verifying value for field '" + FieldName + "' from screen '" + ScreenName);
+		}
+	}
+
+	public static void verifyEnabled(String value) throws IOException
+	{
+		try{
+			List<WebElement> wbElement;
+			wbElement = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(by));
+			int enabled_count=0;
+			int disabled_count=0;
+			for(WebElement wb:wbElement) {
+				if (wb.isEnabled())
+					enabled_count++;
+				else
+					disabled_count++;	
+
+			}
+			if(value.equalsIgnoreCase("YES")) {
+				if (disabled_count==0)
+					Report.PutPass("Verification of enable/disable for '"+ FieldName + "' in screen '" + 
+							ScreenName + "'. Expected: Enabled; Actual: Enabled.");
+				else
+					Report.PutFail("Verification of enable/disable for '"+ FieldName + "' in screen '" + 
+							ScreenName + "'. Expected: Enabled; Actual: Disabled.");
+			}
+			if(value.equalsIgnoreCase("NO")) {
+				if (enabled_count==0)
+					Report.PutPass("Verification of enable/disable for '"+ FieldName + "' in screen '" + 
+							ScreenName + "'. Expected: Disabled; Actual: Disabled.");
+				else
+					Report.PutFail("Verification of enable/disable for '"+ FieldName + "' in screen '" + 
+							ScreenName + "'. Expected: Disabled; Actual: Enabled.");
+			}
+
+		}
+		catch(Exception e)
+		{
+			Log.error("Error in verifyEnabled in FunctionLibrary class");
+			e.printStackTrace();
+			Log.error(e.toString());
+			Report.PutFail("Error in enable/disable verification for field '" + FieldName + "' in screen '" + ScreenName + "'");
+		}
+	}
+
+	public static void verifyVisible(String value) throws IOException
+	{
+		try{
+			List<WebElement> wbElement;
+			wbElement = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+			int visible_count=0;
+			int invisible_count=0;
+			for(WebElement wb:wbElement) {
+				if (wb.isDisplayed())
+					visible_count++;
+				else
+					invisible_count++;	
+
+			}
+			if(value.equalsIgnoreCase("YES")) {
+				if (invisible_count==0)
+					Report.PutPass("Verification of visiblity for '"+ FieldName + "' in screen '" + 
+							ScreenName + "'. Expected: Visible; Actual: Visible.");
+				else
+					Report.PutFail("Verification of visiblity for '"+ FieldName + "' in screen '" + 
+							ScreenName + "'. Expected: Visible; Actual: Invisible.");
+			}
+			if(value.equalsIgnoreCase("NO")) {
+				if (visible_count==0)
+					Report.PutPass("Verification of visiblity for '"+ FieldName + "' in screen '" + 
+							ScreenName + "'. Expected: Invisible; Actual: Invisible.");
+				else
+					Report.PutFail("Verification of visiblity for '"+ FieldName + "' in screen '" + 
+							ScreenName + "'. Expected: Invisible; Actual: Visible.");
+			}
+
+		}
+		catch(Exception e)
+		{
+			Log.error("Error in verifyVisible in FunctionLibrary class");
+			e.printStackTrace();
+			Log.error(e.toString());
+			Report.PutFail("Error in visiblity verification for field '" + FieldName + "' in screen '" + ScreenName + "'");
 		}
 	}
 
