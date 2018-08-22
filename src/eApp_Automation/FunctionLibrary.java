@@ -14,6 +14,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -38,6 +39,7 @@ public class FunctionLibrary {
 	static int TestStepNo;
 	static String ScreenName;
 	static String FieldName;
+	static int error_count;
 	//static WebElement wbElement;
 	//Login Function
 	public static void login(String browser_type, String url, String uname, String pwd, int timeout)
@@ -179,6 +181,14 @@ public class FunctionLibrary {
 				e.printStackTrace();
 			}
 			break;
+		case "VERIFYSERVERMESSAGE":
+		try {
+			verifyServerMsg(data);
+		} catch (IOException e) {
+			Log.error("Error in verifyServerMsg Function in FunctionLibrary Class: " + e.toString());
+			e.printStackTrace();
+		}
+		break;
 		case "VERIFYVALUE":
 			verifyValue(identifiers[0], data);
 			break;
@@ -209,9 +219,12 @@ public class FunctionLibrary {
 				waitForAjax();
 				break;
 			case "DDLB":
-				temp_ddlb= new Select(new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by)));	
+				wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
+				temp_ddlb= new Select(wbElement);	
 				temp_ddlb.selectByVisibleText(data);
 				waitForAjax();
+				wbElement.sendKeys(Keys.TAB);
+				//pressTab();
 				break;
 			case "RADIOOPTION":
 				wbElementList= new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfAllElements(driver.findElements(by)));
@@ -239,6 +252,7 @@ public class FunctionLibrary {
 			}}
 		catch (Exception e)
 		{
+			error_count++;
 			Log.error("Error in setValue for field type '" + fieldtype + "' and data '"+ data + "' in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
@@ -297,6 +311,7 @@ public class FunctionLibrary {
 
 		catch (Exception e)
 		{
+			error_count++;
 			Log.error("Error in getValue for field type '" + fieldtype + "' and row id (" +rowid[0] + "," + rowid[1] + ") in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
@@ -311,6 +326,9 @@ public class FunctionLibrary {
 			WebElement wbElement;
 			Set<String> no_of_windows_old = driver.getWindowHandles();
 			wbElement = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.elementToBeClickable(by));
+			if (wbElement.isEnabled()) {
+			/*new Actions(driver).moveToElement(wbElement).perform();
+			waitForAjax();*/
 			wbElement.click();
 			waitForAjax();
 			Set<String> no_of_windows_new = driver.getWindowHandles();
@@ -321,8 +339,13 @@ public class FunctionLibrary {
 				driver.switchTo().window(winHandle);
 			}}
 		}
+			else
+				Report.PutFail("Error in button click for field " + ScreenName + "-" + FieldName + " Button not enabled.");
+			}
+		
 		catch(Exception e)
 		{
+			error_count++;
 			Log.error("Error in clickButton in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
@@ -337,7 +360,7 @@ public class FunctionLibrary {
 		report_text = "Verification of client side message, Expected: " + message + " , Actual: " ;
 		try{
 			WebElement wbElement;
-			wbElement = new WebDriverWait(driver,2).until(ExpectedConditions.visibilityOfElementLocated(byClientMsg));
+			wbElement = new WebDriverWait(driver,5).until(ExpectedConditions.visibilityOfElementLocated(byClientMsg));
 			waitForAjax();
 			actual_message = wbElement.getText();
 			report_text = report_text + actual_message;
@@ -364,14 +387,63 @@ public class FunctionLibrary {
 			if (message=="")
 				Report.PutPass("Verification of client side message, Expected: No Messsage, Actual: No Message");	
 			else {
+				error_count++;
 				Log.error("Error in verifyClientMsg in FunctionLibrary class " + e.toString());
 				Log.error("Error in verifying Client Side message '" + message + "'");
-				Report.PutFail(report_text);
+				Report.PutFail("Error in verifying Client Side message for field " + ScreenName + "-" + FieldName);
 				e.printStackTrace();
 			}
 		}
 	}
 
+	public static void verifyServerMsg(String message) throws IOException
+	{
+		String report_text = "";
+		String actual_message = "";
+		System.out.println("Inside server msg verification. Expected: "+message);
+		int count=0;
+		report_text = "Verification of server side message for field '" + FieldName + "' from screen '" + ScreenName + "'. Expected: " + message + " Actual: " ;
+		try{
+			List<WebElement> actual_ser_msg = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfAllElements(driver.findElements(By.xpath("//div[@id='centerContent']/div[@id='eastDiv']//div[@id='Messages']/ul/li"))));
+			for(WebElement element:actual_ser_msg) {
+				actual_message=element.getText();
+				System.out.println("Inside WebElement: " + actual_message);
+				if (message.equals(actual_message)){
+					if (count==0) {
+					report_text = report_text + actual_message;}
+					count++;
+				}
+			}
+
+			if(count==1) {
+				Report.PutPass(report_text);	
+			}
+			else if (count > 1)
+			{
+				Report.PutFail(report_text + ". More than one message found.");
+				
+			}
+			else if(count==0)
+			{
+				Report.PutFail(report_text);
+				
+			}
+
+		}
+
+		catch(NoSuchElementException e){
+			if (message=="")
+				Report.PutPass("Verification of server side message, Expected: No Messsage, Actual: No Message");	
+		}
+		catch(Exception e) {
+				error_count++;
+				Log.error("Error in verifyServerMsg in FunctionLibrary class " + e.toString());
+				Log.error("Error in verifying Server Side message '" + message + "'");
+				Report.PutFail("Error in verifying Server Side message for field " + ScreenName + "-" + FieldName);
+				e.printStackTrace();
+		}
+	}
+	
 	public static void verifyValue(String fieldtype, String value) throws IOException
 	{
 		String report_text;
@@ -419,6 +491,7 @@ public class FunctionLibrary {
 
 		catch (Exception e)
 		{
+			error_count++;
 			Log.error("Error in verifyValue in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
@@ -460,6 +533,7 @@ public class FunctionLibrary {
 		}
 		catch(Exception e)
 		{
+			error_count++;
 			Log.error("Error in verifyEnabled in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
@@ -501,6 +575,7 @@ public class FunctionLibrary {
 		}
 		catch(Exception e)
 		{
+			error_count++;
 			Log.error("Error in verifyVisible in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());
@@ -570,6 +645,7 @@ public class FunctionLibrary {
 			}
 			catch(Exception e)
 			{
+				error_count++;
 				Log.error("Error in setRadioOptions in FunctionLibrary class");
 				e.printStackTrace();
 				Log.error(e.toString());
@@ -596,6 +672,7 @@ public class FunctionLibrary {
 
 		catch(Exception e)
 		{
+			error_count++;
 			Log.error("Error in getRadioOptions in FunctionLibrary class");
 			e.printStackTrace();
 			Log.error(e.toString());

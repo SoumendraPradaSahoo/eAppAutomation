@@ -37,7 +37,6 @@ public class Report {
 	
 	public static void CreateTest(String testcaseno) {
 		test = logger.createTest("Test Case: "+ testcaseno);
-		//test.log(Status.INFO, "Google lunched successfully");
 	}
 		//test.log(Status.INFO, "Google lunched successfully");
 		//test.log(Status.INFO, "Search Completed");
