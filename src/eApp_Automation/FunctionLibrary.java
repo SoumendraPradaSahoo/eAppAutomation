@@ -7,6 +7,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
@@ -277,6 +278,14 @@ public class FunctionLibrary {
 				wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
 				tempdata=wbElement.getText();
 				break;
+			case "LINK":
+				wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
+				tempdata=wbElement.getText();
+				break;
+			case "BUTTON":
+				wbElement = new WebDriverWait(driver, TimeOutSeconds).until(ExpectedConditions.visibilityOfElementLocated(by));
+				tempdata = wbElement.getAttribute("value");
+				break;
 			default:
 				break;
 			}
@@ -300,15 +309,17 @@ public class FunctionLibrary {
 	{
 		try{
 			WebElement wbElement;
+			Set<String> no_of_windows_old = driver.getWindowHandles();
 			wbElement = new WebDriverWait(driver,TimeOutSeconds).until(ExpectedConditions.elementToBeClickable(by));
 			wbElement.click();
 			waitForAjax();
-
+			Set<String> no_of_windows_new = driver.getWindowHandles();
 			//Switch to new page if new page opens
+			if(no_of_windows_new.size() != no_of_windows_old.size()) {
 			for(String winHandle : driver.getWindowHandles()){
 				System.out.println(winHandle);
 				driver.switchTo().window(winHandle);
-			}
+			}}
 		}
 		catch(Exception e)
 		{
