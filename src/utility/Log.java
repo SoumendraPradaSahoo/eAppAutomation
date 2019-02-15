@@ -55,6 +55,6 @@ public class Log {
 		}
 
 	private static void init() {
-		PropertyConfigurator.configure("D:/eAppAutomation/Object/log4j.properties");
+		PropertyConfigurator.configure("C:/Users/ssahoo43/D_Drive/eAppAutomation/Object/log4j.properties");
 	}
 }
